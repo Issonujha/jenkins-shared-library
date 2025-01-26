@@ -4,6 +4,6 @@ withCredentials([usernamePassword("credentialsId":"connectToDockerStudy",
                     usernameVariable:"dockerHubUser")]) {
                     sh "docker login -u ${dockerHubUser} -p ${dockerHubPass}"
                     sh "docker image tag notes-app:latest ${dockerHubUser}/${project}:${imageTag}"
-                    sh "docker push ${dockerHubUser}/{$project}:${imageTag}"
+                    sh "docker push ${dockerHubUser}/${project}:${imageTag}"
                 }
 }
